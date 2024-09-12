@@ -1,0 +1,23 @@
+/* Index Page Title */
+.title {
+    padding: 25px;
+}
+
+/* Login and Register Button */
+.auth-btn {
+    text-align: center;
+}
+
+/* Authentication Forms */
+.auth-card {
+    margin: 20% auto;
+    width: 50%;
+}
+
+/* Authentication Form Fields */
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
