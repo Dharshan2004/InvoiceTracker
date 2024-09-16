@@ -1,4 +1,10 @@
 from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+def center_text_in_cell(cell):
+    # Center text horizontally
+    for paragraph in cell.paragraphs:
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 def replace_text_in_runs(paragraph, old_text, new_text):
     # Iterate over each run in the paragraph
@@ -11,7 +17,11 @@ def add_table_entires(table, entries):
     for entry in entries:
         row = table.add_row()  # Add a new row
         for i, cell_text in enumerate(entry):
-            row.cells[i].text = cell_text
+            cell = row.cells[i]
+            cell.text = cell_text
+
+            # Center text in the cell
+            center_text_in_cell(cell)
 
 def replace_text_in_docx(input_file, output_file, entries, table_entries):
     # Load the document
