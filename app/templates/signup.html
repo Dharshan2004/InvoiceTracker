@@ -10,23 +10,29 @@
 <body>
         <div class="container">
             <div class="card auth-card">
-                <form class="card-body" action="{{ url_for('main.signup') }}" method="post">
-                    <div class="mb-3 auth-field">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email">
-                        <div class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3 auth-field">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-                    <div class="mb-3 auth-field">
-                        <button type="submit" class="btn btn-primary">Register</button>
-                    </div>
-                    <div class="mb-3 auth-field">
-                        <p>Already have an account? <a href="{{ url_for('main.login') }}">Login</a></p>
-                    </div>
-                </form>
+                <div class="card-body">
+                    <h3 class="mb-3">Sign Up</h3>
+                    <form action="{{ url_for('main.signup') }}" method="post">
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="license" class="form-control" id="license" placeholder="License No" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="contact" class="form-control" id="contact" placeholder="Phone No" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <div>
+                            <input class="btn btn-primary" type="submit" value="Sign Up">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

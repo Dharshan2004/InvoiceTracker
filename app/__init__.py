@@ -6,6 +6,7 @@ def page_not_found(e):
 
 def create_app():
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'secret'
     app.register_blueprint(main_blueprint)
     app.register_error_handler(404, page_not_found)
     return app

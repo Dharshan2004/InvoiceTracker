@@ -9,16 +9,29 @@
 </head>
 <body>
         <div class="container">
+            <div>
+                {% with messages = get_flashed_messages() %} 
+                    {% if messages %}
+                        <ul class="flashes list-group">
+                            {% for message in messages %}
+                            <li class="list-group-item">
+                                <div class="alert alert-success">{{message}}</div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %} 
+                {% endwith %}
+            </div>
             <div class="card auth-card">
                 <form class="card-body" action="{{ url_for('main.login') }}" method="post">
                     <div class="mb-3 auth-field">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email">
+                        <input name="email" type="email" class="form-control" id="email" required>
                         <div class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3 auth-field">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password">
+                        <input name="password" type="password" class="form-control" id="password" required>
                     </div>
                     <div class="mb-3 auth-field">
                         <button type="submit" class="btn btn-primary">Login</button>

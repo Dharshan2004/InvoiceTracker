@@ -15,9 +15,23 @@
 }
 
 /* Authentication Form Fields */
-.auth-card input {
+.auth-field input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.list-group {
+    margin: 10px 0;
+}
+
+.list-group-item {
+    margin: 0;
+    padding: 0;
+}
+
+.alert {
+    margin: 0;
 }
